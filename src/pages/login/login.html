@@ -1,0 +1,91 @@
+<ion-content>
+  <!--LOGIN-->
+  <div class="login-background" *ngIf="login" [@login]>
+    <!--OVERLAY-->
+    <div class="overlay">
+      <!-- LOGIN CONTAINER-->
+      <div>
+        <!--LOGO-->
+        <div class="center padding-top-20-percent">
+          <img src="/assets/imgs/logo-white.png" class="logo-white-login">
+        </div>
+        <!--TEXTOS-->
+        <!--TITULO-->
+        <div class="margin-top-30">
+          <h5 class="white center bold no-margin">INTEGRA</h5>
+          <!--SUBTITULO-->
+          <p class="white center light margin-top-5">Efetue login para colaborar</p>
+        </div>
+      </div>
+      <!--FORMS E CTA-->
+      <div class="padding-40">
+        <ion-item class="bg-transparent no-padding">
+          <ion-label stacked class="white">E-mail</ion-label>
+          <ion-input type="email" class="white" [ngModel]="loginForm.email"></ion-input>
+        </ion-item>
+        <ion-item class="bg-transparent no-padding margin-top-20">
+          <ion-label stacked class="white">Senha</ion-label>
+          <ion-input type="password" class="white" [ngModel]="loginForm.password"></ion-input>>
+        </ion-item>
+
+        <div class="ctaLogin center bold margin-top-30" (click)="fazerLogin()">
+          ENTRAR
+        </div>
+        <!--NOVA CONTA-->
+        <div class="txtRegistrar margin-top-20 center bold" (click)="exibirRegistrar()">
+          QUERO CRIAR UMA NOVA CONTA
+        </div>
+      </div>
+      <!-- /CONTAINER-->
+    </div>
+    <!-- /OVERLAY-->
+  </div>
+  <!--BACKGROUND-->
+
+  <!--REGISTER-->
+  <div class="register-background" *ngIf="register" [@registro]>
+    <!--OVERLAY-->
+    <div class="overlay">
+      <!-- REGISTER CONTAINER-->
+      <div>
+        <!--LOGO-->
+        <div class="center padding-top-20-percent">
+          <img src="/assets/imgs/logo-white.png" class="logo-white-login">
+        </div>
+        <!--TEXTOS-->
+        <!--TITULO-->
+        <div class="margin-top-30">
+          <h5 class="white center bold no-margin">VAMOS COMEÇAR</h5>
+          <!--SUBTITULO-->
+          <p class="white center light margin-top-5">Crie agora suas credenciais</p>
+        </div>
+      </div>
+      <!--FORMS E CTA-->
+      <div class="padding-40">
+        <ion-item class="bg-transparent no-padding margin-top-10">
+          <ion-label stacked class="white">Como voce se chama?</ion-label>
+          <ion-input type="text" class="white" [ngModel]="registerForm.name"></ion-input>
+        </ion-item>
+        <ion-item class="bg-transparent no-padding margin-top-20">
+          <ion-label stacked class="white">Qual o seu e-mail?</ion-label>
+          <ion-input type="email" class="white" [ngModel]="registerForm.email"></ion-input>
+        </ion-item>
+        <ion-item class="bg-transparent no-padding margin-top-20">
+          <ion-label stacked class="white">Senha</ion-label>
+          <ion-input type="password" class="white" [ngModel]="registerForm.password"></ion-input>
+        </ion-item>
+
+        <div class="ctaLogin center bold margin-top-30" (click)="criarNovaConta()">
+          CADASTRAR
+        </div>
+        <!--JA TENHO UMA CONTA-->
+        <div class="txtRegistrar margin-top-20 center bold" (click)="exibirLogar()">
+          JA TENHO UMA CONTA
+        </div>
+      </div>
+      <!-- /CONTAINER-->
+    </div>
+    <!-- /OVERLAY-->
+  </div>
+  <!--BACKGROUND-->
+</ion-content>

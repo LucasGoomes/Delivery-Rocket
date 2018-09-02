@@ -1,14 +1,202 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar no-border-bottom>
     <ion-title>
-      Ionic Blank
+      Integra
     </ion-title>
   </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="puppies">
+        Ideias
+      </ion-segment-button>
+      <ion-segment-button value="kittens">
+        Ações
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar Ideias"></ion-searchbar>
+      <ion-card>
+        <img src="assets/imgs/lixo.jpg" />
+
+        <ion-card-content>
+          <ion-card-title>
+            Lixo nas calçadas
+          </ion-card-title>
+          <p>
+            Ajuda para limpar nossas calçadas. Vamos precisar de: 3 pessoas e 3 vassoras.
+          </p>
+        </ion-card-content>
+
+        <ion-row no-padding>
+          <!-- <ion-col>
+                  <button ion-button clear small color="danger" icon-start>
+                    <ion-icon name='heart'></ion-icon>
+                    APOIAR
+                  </button>
+                </ion-col> -->
+          <!-- <ion-col text-center>
+                    <button ion-button clear small color="danger" icon-start>
+                      <ion-icon name='musical-notes'></ion-icon>
+                      Listen
+                    </button>
+                  </ion-col> -->
+          <ion-col text-right>
+            <button ion-button clear small color="danger" icon-start (click)="detalhe()">
+              <ion-icon name='share-alt'></ion-icon>
+              VER IDEIA
+            </button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/imgs/parede-branca.jpg" />
+
+        <ion-card-content>
+          <ion-card-title>
+            Pintar a parede
+          </ion-card-title>
+          <p>
+            Preciso de 3 pessoas para ajudar a pintar a parede. Já tenho os equipamentos necessários.
+          </p>
+        </ion-card-content>
+
+        <ion-row no-padding>
+          <!-- <ion-col>
+                  <button ion-button clear small color="danger" icon-start>
+                    <ion-icon name='heart'></ion-icon>
+                    APOIAR
+                  </button>
+                </ion-col> -->
+          <!-- <ion-col text-center>
+                    <button ion-button clear small color="danger" icon-start>
+                      <ion-icon name='musical-notes'></ion-icon>
+                      Listen
+                    </button>
+                  </ion-col> -->
+          <ion-col text-right>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              VER IDEIA
+            </button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/imgs/horta.jpg" />
+
+        <ion-card-content>
+          <ion-card-title>
+            Horta comunitária
+          </ion-card-title>
+          <p>
+            O máximo de pessoas possíveis e mudas para fazer a horta da nossa comunidade.
+          </p>
+        </ion-card-content>
+
+        <ion-row no-padding>
+          <!-- <ion-col>
+                  <button ion-button clear small color="danger" icon-start>
+                    <ion-icon name='heart'></ion-icon>
+                    APOIAR
+                  </button>
+                </ion-col> -->
+          <!-- <ion-col text-center>
+                    <button ion-button clear small color="danger" icon-start>
+                      <ion-icon name='musical-notes'></ion-icon>
+                      Listen
+                    </button>
+                  </ion-col> -->
+          <ion-col text-right>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              VER IDEIA
+            </button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar ações"></ion-searchbar>
+
+      <ion-card>
+        <img src="assets/imgs/lixo.jpg" />
+
+        <ion-row>
+          <ion-col col-2>
+            <ion-card-title text-left class="dataAcao">
+              10 SET
+            </ion-card-title>
+          </ion-col>
+          <ion-col col-10>
+            <ion-card-title text-right class="tituloAcao">
+              Lixo nas calçadas
+            </ion-card-title>
+            <p class="descAcao">
+              Acontecerá a limpeza das nossas calçadas, contribuindo para melhorar nossa vizinhança
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/imgs/parede-branca.jpg" />
+
+        <ion-row>
+          <ion-col col-2>
+            <ion-card-title text-left class="dataAcao">
+              13 SET
+            </ion-card-title>
+          </ion-col>
+          <ion-col col-10>
+            <ion-card-title text-right class="tituloAcao">
+              Pintar a parede
+            </ion-card-title>
+            <p class="descAcao">
+              Acontecerá a pintura da parede, contribuindo para melhorar nossa vizinhança
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/imgs/horta.jpg" />
+
+        <ion-row>
+          <ion-col col-2>
+            <ion-card-title text-left class="dataAcao">
+              17 SET
+            </ion-card-title>
+          </ion-col>
+          <ion-col col-10>
+            <ion-card-title text-right class="tituloAcao">
+              Hora comunitária
+            </ion-card-title>
+            <p class="descAcao">
+              Acontecerá o inicio da nossa horta comunitária, contribuindo para melhorar nossa vizinhança
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-list>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab color="gray">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

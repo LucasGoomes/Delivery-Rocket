@@ -1,16 +1,87 @@
-// http://ionicframework.com/docs/theming/
+//CORES DO APP
+.purple{
+    color: $purple;
+}
 
+.dark{
+    color: $dark;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.gray{
+    color: $gray;
+}
+
+.white{
+    color: $white;
+}
+
+.orange{
+    color: $orange;
+}
+//FONTS
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700');
+
+//FONT STYLE
+.bold{
+    font-weight: 700;
+}
+.light{
+    font-weight: 300;
+}
+//GLOBAL
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+//CENTER
+.center{
+    text-align: center;
+}
+
+//MARGINS
+.margin-top-5{
+    margin-top: 5px;
+}
+.margin-top-10{
+    margin-top: 10px;
+}
+.margin-top-20{
+    margin-top: 20px;
+}
+.margin-top-30{
+    margin-top: 30px;
+}
+.margin-top-40{
+    margin-top: 40px;
+}
+//PADDING
+.no-padding{
+    padding: 0px;
+}
+.padding-40{
+    padding: 40px;
+}
+.padding-top-20-percent{
+    padding-top: 20%;
+}
+.padding-top-30{
+    padding-top: 30px;
+}
+.no-margin{
+    margin: 0px;
+}
+
+.bg-transparent{
+    background: transparent;
+}
+.ctaLogin{
+    padding: 10px;
+    background-color: $white;
+    color: $purple;
+    border-radius: 100px;
+}
+
+.txtRegistrar{
+    color: $white;
+    font-size: 13px;
+}

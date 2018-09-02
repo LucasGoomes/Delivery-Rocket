@@ -1,0 +1,30 @@
+page-acao {
+    .card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    top: -10px;
+    
+  }
+
+  .card-title {
+    position: absolute;
+    top: 20%;
+    font-size: 4.0em;
+    width: 100%;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card-subtitle {
+    font-size: 2.0em;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    color: black;
+    font-weight: bold;
+  }
+
+}
+}
